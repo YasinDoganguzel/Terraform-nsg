@@ -1,5 +1,20 @@
+variable "nsg_name" {
+  description = "The name of the Network Security Group"
+  type        = string
+}
+
+variable "location" {
+  description = "The location for the NSG"
+  type        = string
+}
+
+variable "resource_group_name" {
+  description = "The name of the resource group"
+  type        = string
+}
+
 variable "security_rules" {
-  description = "A list of security rules for the NSG"
+  description = "List of security rules to apply to the NSG"
   type = list(object({
     name                        = string
     priority                    = number

@@ -20,7 +20,11 @@ module "vnet" {
   }
 }
 module "nsg" {
-  source = "./modules/nsg"
+  source              = "./modules/nsg"
+  nsg_name            = "example-nsg"                    
+  location            = azurerm_resource_group.rg.location 
+  resource_group_name = azurerm_resource_group.rg.name    
+
   security_rules = [
     {
       name                        = "Allow-HTTP"
@@ -33,5 +37,5 @@ module "nsg" {
       source_address_prefix       = "*"
       destination_address_prefix  = "*"
     }
-    ]
+  ]
 }
