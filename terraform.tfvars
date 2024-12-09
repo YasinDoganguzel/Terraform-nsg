@@ -9,7 +9,7 @@ subnets = {
   "yasin-subnet2" = "10.0.2.0/24"
 }
 
-nsg_name       = "example-nsg"
+nsg_name       = "yasin-nsg"
 nsg_location   = "East US"
 security_rules = [
   {
